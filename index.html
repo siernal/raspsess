@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2563eb">
+<title>Расписание ЭЭ212</title>
+<style>
+:root{color-scheme:light;--blue:#2563eb;--ink:#122640;--muted:#65758e;--line:#dee6f1;--bg:#f4f7fb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #93b7ff;outline-offset:3px}main{max-width:1640px;margin:auto;padding:28px 28px 36px}.top{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:20px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:.13em;color:var(--blue);text-transform:uppercase;margin-bottom:3px}h1{font-size:26px;line-height:1.2;letter-spacing:-.03em;margin:0}h1 span{color:var(--blue)}.sub{color:var(--muted);font-size:12px;margin-top:6px}.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}.pill{font-size:12px;white-space:nowrap;padding:6px 11px;border:1px solid #bfd5ff;background:#e9f1ff;color:#235acf;border-radius:30px}.pill.soft{background:#fff;border-color:var(--line);color:var(--muted)}.controls{background:white;border:1px solid #e8edf4;border-radius:16px;padding:17px 18px;box-shadow:0 2px 3px #152e5210;margin-bottom:17px}.toolbar{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}.navigation,.choose{display:flex;align-items:center;gap:8px}.btn{border:1px solid var(--line);background:white;color:var(--ink);padding:9px 14px;border-radius:9px;box-shadow:0 1px 2px #0f284410;transition:background .15s}.btn:hover{background:#f0f5ff}.btn.primary{background:var(--blue);border-color:var(--blue);color:white}.btn.primary:hover{background:#1d4ed8}.choose>span{font-size:12px;font-weight:600;margin-right:5px}.segments{display:flex;background:#f0f4fa;padding:3px;border:1px solid #e4eaf3;border-radius:10px}.segments button{border:0;background:transparent;padding:7px 12px;border-radius:7px;color:var(--muted);font-weight:600;font-size:12px}.segments button[aria-pressed=true]{background:white;color:var(--blue);box-shadow:0 1px 4px #13294320}.hint{font-size:12px;color:var(--muted);margin:12px 0 0;border-top:1px solid #edf1f7;padding-top:11px}.hint strong{color:var(--ink);font-weight:600}.overview{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 1px 10px}.overview h2{font-size:14px;margin:0;font-weight:650}.overview span{font-size:12px;color:var(--muted)}.alerts:empty{display:none}.alerts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:13px}.alert{font-size:12px;padding:7px 11px;border:1px solid #eed8b0;background:#fff8eb;border-radius:8px;color:#815414}.alert.exam{background:#fff0f1;border-color:#f1cdd2;color:#ad3445}.schedule{width:100%;border-spacing:0;border-collapse:separate;table-layout:fixed;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 3px 12px #223a5710}.schedule th,.schedule td{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.schedule tr>*:last-child{border-right:0}.schedule tbody tr:last-child>*{border-bottom:0}.schedule thead th{background:#eef3fa;padding:15px 5px 14px;text-align:center;height:84px;font-size:12px;letter-spacing:.04em}.schedule thead th:first-child{width:85px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.08em}.schedule thead th small{display:block;font-size:11px;font-weight:400;letter-spacing:0;margin-top:3px;color:var(--muted)}.schedule thead th.today{background:var(--blue);color:white}.schedule thead th.today small{color:#e0eaff}.day-dot{display:inline-block;font-size:9px;line-height:1;background:#ffffff30;border-radius:20px;padding:4px 6px;margin-top:5px;letter-spacing:0}.schedule tbody th{vertical-align:top;text-align:center;background:#f8fafd;font-weight:600;padding:18px 4px;font-size:12px}.schedule tbody th small{display:block;font-size:10px;font-weight:400;color:var(--muted);line-height:1.6;margin-top:4px}.schedule td{vertical-align:top;padding:6px;background:#fff;min-height:90px}.schedule td.weekend{background:#fafbfd}.schedule td.is-today{background:#f5f9ff}.event{border:1px solid #e4eaf3;border-left:3px solid #8eafea;border-radius:7px;background:white;padding:9px 8px;margin-bottom:6px;box-shadow:0 1px 2px #17335205;overflow-wrap:anywhere}.event:last-child{margin-bottom:0}.event.exam{border-left-color:#db546c;background:#fff9fa}.event.consultation{border-left-color:#e1a940;background:#fffdf7}.event h3{font-size:12px;line-height:1.45;font-weight:650;margin:4px 0 5px;letter-spacing:-.01em}.event p{font-size:10.5px;line-height:1.5;color:var(--muted);margin:0 0 6px}.event-top{display:flex;gap:5px;align-items:center;flex-wrap:wrap;font-size:10px;font-weight:650;color:#41699f}.type{font-size:9px;border-radius:4px;background:#edf3ff;color:#476da7;padding:2px 5px}.exam .type{background:#fce7eb;color:#b23e54}.consultation .type{background:#fff0cf;color:#926116}.group-tag{font-size:9px;font-weight:500;color:var(--muted)}.event-meta{display:flex;gap:4px;align-items:center;flex-wrap:wrap;font-size:10px}.room{color:#335986;font-weight:650;background:#eff4fa;padding:2px 5px;border-radius:4px}.online{color:#267963;background:#edf8f4}.no-event{display:block;text-align:center;color:#d3dce8;padding:20px 0;font-size:16px}.session-empty{background:white;border:1px dashed #bccce1;border-radius:12px;padding:18px;text-align:center;margin-bottom:14px;color:var(--muted)}.session-empty button{margin-top:10px}.session-empty p{margin:0}.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:16px}.legend{display:flex;gap:15px}.legend i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#8eafea;margin-right:5px}.legend .exam-dot{background:#db546c}.legend .consult-dot{background:#e1a940}.source-note{font-size:11px;color:var(--muted);margin:9px 0 0}.mobile{display:none}.mobile-day{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px}.mobile-day>h3{margin:0;padding:11px 13px;font-size:13px;background:#edf3fa;display:flex;justify-content:space-between}.mobile-day.today>h3{background:var(--blue);color:white}.mobile-day .day-body{padding:10px}.mobile-day .empty-day{font-size:12px;color:var(--muted);margin:0;padding:2px 3px}.mobile-day .event h3{display:block;background:none;padding:0;font-size:14px}.mobile-day .event p{font-size:12px}.mobile-day .event-top,.mobile-day .event-meta{font-size:11px}.mobile-day .type,.mobile-day .group-tag{font-size:10px}[hidden]{display:none!important}
+@media(min-width:1450px){.event h3{font-size:13px}.event p{font-size:11px}.event{padding:10px}.schedule tbody th small{font-size:11px}}
+@media(max-width:1050px){main{padding:20px 14px}.event{padding:7px 5px}.schedule td{padding:4px}.schedule thead th:first-child{width:65px}.event h3{font-size:11px}.event p{font-size:10px}.schedule tbody th small{font-size:9px}.badges{gap:5px}}
+@media(max-width:760px){main{padding:18px 12px 25px}.top{align-items:flex-start;flex-direction:column;gap:12px;margin-bottom:14px}h1{font-size:24px}.badges{justify-content:flex-start}.pill{font-size:11px;padding:4px 9px}.controls{padding:13px}.toolbar{gap:14px}.navigation{width:100%;gap:6px}.navigation .btn{flex:1;padding:9px 5px;font-size:12px}.choose{justify-content:space-between;width:100%}.choose>span{font-size:12px}.segments{flex:1;max-width:270px}.segments button{flex:1}.hint{font-size:11px;line-height:1.6}.desktop{display:none}.mobile{display:block}.overview{align-items:flex-start}.overview span{font-size:11px;max-width:130px;text-align:right}.overview h2{font-size:13px}.alert{font-size:11px}.footer{font-size:10px}.source-note{line-height:1.65}}
+@media print{body{background:white}main{padding:0;max-width:none}.controls,.source-note{display:none}.top{margin-bottom:8px}.schedule{box-shadow:none;border-radius:0}.desktop{display:block}.mobile{display:none}.event{box-shadow:none;break-inside:avoid}.schedule thead{display:table-header-group}.schedule tr{break-inside:avoid}.event h3{font-size:9px}.event p{font-size:8px}.event{padding:4px}.schedule td{padding:3px}.pill{color:black;background:white}.footer{margin-top:8px}@page{size:A4 landscape;margin:8mm}
+</style>
+</head>
+<body>
+<main>
+<header class="top"><div><div class="eyebrow">ЭЭ212 · Сессия 2026</div><h1>Расписание <span>занятий</span></h1><div class="sub">26 октября — 14 ноября · Электроснабжение</div></div><div class="badges"><span class="pill soft" id="week-number"></span><span class="pill" id="week-range"></span></div></header>
+<section class="controls" aria-label="Настройки расписания"><div class="toolbar"><div class="navigation"><button class="btn" id="prev" aria-label="Предыдущая неделя">← Предыдущая</button><button class="btn primary" id="today">Сегодня</button><button class="btn" id="next" aria-label="Следующая неделя">Следующая →</button></div><div class="choose"><span id="group-label">Подгруппа</span><div class="segments" role="group" aria-labelledby="group-label"><button data-group="1" aria-pressed="true">1</button><button data-group="2" aria-pressed="false">2</button><button data-group="all" aria-pressed="false">Обе</button></div></div></div><p class="hint"><strong>Расписание по конкретным датам.</strong> Общие занятия, экзамены и консультации отображаются для обеих подгрупп. 1 — левая колонка исходного расписания, 2 — правая.</p></section>
+<div class="overview"><h2 id="week-title"></h2><span id="count" aria-live="polite"></span></div>
+<div class="alerts" id="alerts" aria-label="Экзамены и консультации недели"></div>
+<div class="session-empty" id="outside" hidden><p>На эту неделю в расписании сессии занятий нет.</p><button class="btn" id="start">К началу сессии</button></div>
+<div class="desktop"><table class="schedule" aria-label="Расписание на выбранную неделю"><thead id="head"></thead><tbody id="body"></tbody></table></div>
+<div class="mobile" id="mobile"></div>
+<footer class="footer"><div class="legend"><span><i></i>Занятие</span><span><i class="consult-dot"></i>Консультация</span><span><i class="exam-dot"></i>Экзамен</span></div><span>Д/О — дистанционно · Аудитория указана как в исходнике</span></footer>
+<p class="source-note">Источник: расписание ЭЭ212 на сессию 26.10–14.11.2026. Преподаватели указаны с фамилиями и инициалами, как в документе. Если занятия совпадают по времени, показаны все записи исходника.</p>
+<noscript><p>Для переключения недель и подгрупп включите JavaScript в браузере.</p></noscript>
+</main>
+<script>
+'use strict';
+const EVENTS = [
+  {
+    "id": 1,
+    "date": "2026-10-26",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 2,
+    "date": "2026-11-02",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 3,
+    "date": "2026-11-09",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 4,
+    "date": "2026-10-26",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 5,
+    "date": "2026-11-02",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 6,
+    "date": "2026-10-26",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 7,
+    "date": "2026-11-02",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 8,
+    "date": "2026-10-26",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 9,
+    "date": "2026-11-02",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "101/6",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 10,
+    "date": "2026-10-26",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 11,
+    "date": "2026-10-26",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 12,
+    "date": "2026-11-02",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "159/2",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 13,
+    "date": "2026-11-02",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "212/6",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 14,
+    "date": "2026-11-09",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "159/2",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 15,
+    "date": "2026-10-26",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 16,
+    "date": "2026-10-26",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 17,
+    "date": "2026-11-02",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "212/6",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 18,
+    "date": "2026-11-02",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "159/2",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 19,
+    "date": "2026-11-09",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "159/2",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 20,
+    "date": "2026-10-27",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 21,
+    "date": "2026-10-27",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 22,
+    "date": "2026-11-03",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 23,
+    "date": "2026-11-03",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Инженерная и компьютерная графика",
+    "teacher": "ст. преп. Гараев Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 24,
+    "date": "2026-10-27",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 25,
+    "date": "2026-11-03",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 26,
+    "date": "2026-11-10",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "306/6",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "consultation"
+  },
+  {
+    "id": 27,
+    "date": "2026-10-27",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 28,
+    "date": "2026-11-03",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 29,
+    "date": "2026-10-27",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 30,
+    "date": "2026-11-03",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "207/2",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 31,
+    "date": "2026-10-27",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 32,
+    "date": "2026-10-27",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 33,
+    "date": "2026-11-03",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "208/2",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 34,
+    "date": "2026-11-03",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "209/2",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 35,
+    "date": "2026-10-27",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 36,
+    "date": "2026-10-27",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 37,
+    "date": "2026-11-03",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "209/2",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 38,
+    "date": "2026-11-03",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "208/2",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 39,
+    "date": "2026-10-28",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Ярмухаметов У. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 40,
+    "date": "2026-11-11",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Ярмухаметов У. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 41,
+    "date": "2026-10-28",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Ярмухаметов У. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 42,
+    "date": "2026-11-11",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Ярмухаметов У. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 43,
+    "date": "2026-10-28",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Деловой иностранный язык",
+    "teacher": "доц. Эделева И. В., проф. Беляев А. Н.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 44,
+    "date": "2026-11-11",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Деловой иностранный язык (нем. язык)",
+    "teacher": "проф. Беляев А. Н.",
+    "room": "316/1",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 45,
+    "date": "2026-10-28",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 46,
+    "date": "2026-11-11",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "402/6",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "exam"
+  },
+  {
+    "id": 47,
+    "date": "2026-10-28",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 48,
+    "date": "2026-11-11",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "149/2",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "consultation"
+  },
+  {
+    "id": 49,
+    "date": "2026-10-28",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 50,
+    "date": "2026-10-29",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Электроснабжение",
+    "teacher": "проф. Галиуллин Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 51,
+    "date": "2026-11-05",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Электроснабжение",
+    "teacher": "проф. Галиуллин Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 52,
+    "date": "2026-10-29",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Элективные дисциплины по физической культуре и спорту",
+    "teacher": "доц. Ахмадуллина Э. Т.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 53,
+    "date": "2026-11-05",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Основы теплотехники",
+    "teacher": "доц. Харисов Д. Д.",
+    "room": "348/2",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 54,
+    "date": "2026-10-29",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Элективные дисциплины по физической культуре и спорту",
+    "teacher": "доц. Ахмадуллина Э. Т.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 55,
+    "date": "2026-11-05",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Элективные дисциплины по физической культуре и спорту",
+    "teacher": "доц. Ахмадуллина Э. Т.",
+    "room": "с/зал",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 56,
+    "date": "2026-11-12",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "149/2",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "consultation"
+  },
+  {
+    "id": 57,
+    "date": "2026-10-29",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 58,
+    "date": "2026-11-05",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "269/1",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 59,
+    "date": "2026-11-12",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "149/2",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "exam"
+  },
+  {
+    "id": 60,
+    "date": "2026-10-29",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 61,
+    "date": "2026-10-29",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 62,
+    "date": "2026-11-05",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "210/2",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 63,
+    "date": "2026-11-05",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "269/1",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 64,
+    "date": "2026-10-29",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 65,
+    "date": "2026-10-29",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 66,
+    "date": "2026-11-05",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Основы научных исследований",
+    "teacher": "доц. Шарафутдинов А. В.",
+    "room": "269/1",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 67,
+    "date": "2026-11-05",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "210/2",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 68,
+    "date": "2026-10-30",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Основы теплотехники",
+    "teacher": "доц. Харисов Д. Д.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 69,
+    "date": "2026-11-06",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Основы теплотехники",
+    "teacher": "доц. Харисов Д. Д.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 70,
+    "date": "2026-11-13",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Основы теплотехники",
+    "teacher": "доц. Харисов Д. Д.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 71,
+    "date": "2026-10-30",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Основы теплотехники",
+    "teacher": "доц. Харисов Д. Д.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 72,
+    "date": "2026-11-06",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "208/2",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 73,
+    "date": "2026-10-30",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Электроснабжение",
+    "teacher": "проф. Галиуллин Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 74,
+    "date": "2026-11-06",
+    "start": "12:55",
+    "end": "14:30",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "403/2",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 75,
+    "date": "2026-10-30",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Электроснабжение",
+    "teacher": "проф. Галиуллин Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 76,
+    "date": "2026-11-06",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Электроснабжение",
+    "teacher": "проф. Галиуллин Р. Р.",
+    "room": "102/6",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 77,
+    "date": "2026-11-13",
+    "start": "14:45",
+    "end": "16:20",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "149/2",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "exam"
+  },
+  {
+    "id": 78,
+    "date": "2026-10-30",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Деловой иностранный язык",
+    "teacher": "доц. Эделева И. В., проф. Беляев А. Н.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 79,
+    "date": "2026-10-30",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Электроснабжение",
+    "teacher": "асс. Байназаров В. Г.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 80,
+    "date": "2026-11-06",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Деловой иностранный язык",
+    "teacher": "доц. Эделева И. В.",
+    "room": "426/1",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 81,
+    "date": "2026-11-06",
+    "start": "16:35",
+    "end": "18:10",
+    "title": "Электроснабжение",
+    "teacher": "асс. Байназаров В. Г.",
+    "room": "210/6",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 82,
+    "date": "2026-10-30",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Электроснабжение",
+    "teacher": "асс. Байназаров В. Г.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 83,
+    "date": "2026-10-30",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Деловой иностранный язык",
+    "teacher": "доц. Эделева И. В., проф. Беляев А. Н.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 84,
+    "date": "2026-11-06",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Электроснабжение",
+    "teacher": "асс. Байназаров В. Г.",
+    "room": "210/6",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 85,
+    "date": "2026-11-06",
+    "start": "18:25",
+    "end": "20:00",
+    "title": "Деловой иностранный язык",
+    "teacher": "доц. Эделева И. В.",
+    "room": "426/1",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 86,
+    "date": "2026-10-31",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Теоретические основы электротехники",
+    "teacher": "доц. Нугуманов Р. Р.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 87,
+    "date": "2026-10-31",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Элективные дисциплины по физической культуре и спорту",
+    "teacher": "доц. Ахмадуллина Э. Т.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 88,
+    "date": "2026-11-07",
+    "start": "08:30",
+    "end": "10:05",
+    "title": "Элективные дисциплины по физической культуре и спорту",
+    "teacher": "доц. Ахмадуллина Э. Т.",
+    "room": "Д/О",
+    "groups": [
+      1,
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 89,
+    "date": "2026-10-31",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Деловой иностранный язык",
+    "teacher": "доц. Эделева И. В., проф. Беляев А. Н.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 90,
+    "date": "2026-10-31",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 91,
+    "date": "2026-11-07",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 92,
+    "date": "2026-11-07",
+    "start": "10:20",
+    "end": "11:55",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 93,
+    "date": "2026-10-31",
+    "start": "12:10",
+    "end": "13:45",
+    "title": "Электротехническое и конструкционное материаловедение",
+    "teacher": "проф. Сайфуллин Р. Н.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 94,
+    "date": "2026-10-31",
+    "start": "12:10",
+    "end": "13:45",
+    "title": "Деловой иностранный язык",
+    "teacher": "доц. Эделева И. В., проф. Беляев А. Н.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 95,
+    "date": "2026-11-07",
+    "start": "12:10",
+    "end": "13:45",
+    "title": "Физика",
+    "teacher": "доц. Гайсина Г. А.",
+    "room": "Д/О",
+    "groups": [
+      1
+    ],
+    "kind": "class"
+  },
+  {
+    "id": 96,
+    "date": "2026-11-07",
+    "start": "12:10",
+    "end": "13:45",
+    "title": "Математика",
+    "teacher": "доц. Зиянгирова С. Р.",
+    "room": "Д/О",
+    "groups": [
+      2
+    ],
+    "kind": "class"
+  }
+];
+const SESSION_START='2026-10-26', SESSION_END='2026-11-14';
+const SHORT_DAYS=['ПН','ВТ','СР','ЧТ','ПТ','СБ','ВС'];
+const LONG_DAYS=['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
+const SLOTS=[['08:30','10:05'],['10:20','11:55'],['12:55','14:30'],['14:45','16:20'],['16:35','18:10'],['18:25','20:00']];
+const labels={exam:'Экзамен',consultation:'Консультация',class:'Занятие'};
+const $=id=>document.getElementById(id);
+const parseDate=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d,12)};
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const addDays=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n,12);
+const monday=d=>addDays(d,-((d.getDay()+6)%7));
+const dm=d=>`${String(d.getDate()).padStart(2,'0')}.${String(d.getMonth()+1).padStart(2,'0')}`;
+function weekNumber(d){const u=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));u.setUTCDate(u.getUTCDate()+4-(u.getUTCDay()||7));const y=new Date(Date.UTC(u.getUTCFullYear(),0,1));return Math.ceil((((u-y)/86400000)+1)/7)}
+const now=new Date(),todayKey=iso(now);
+let currentWeek=monday(parseDate(todayKey>=SESSION_START&&todayKey<=SESSION_END?todayKey:SESSION_START));
+let selectedGroup='1';try{const saved=localStorage.getItem('ee212-subgroup');if(['1','2','all'].includes(saved))selectedGroup=saved}catch(e){}
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function slotIndex(e){return e.start==='12:10'?2:SLOTS.findIndex(s=>s[0]===e.start)}
+function getWeekEvents(){const first=iso(currentWeek),last=iso(addDays(currentWeek,6));return EVENTS.filter(e=>e.date>=first&&e.date<=last&&(selectedGroup==='all'||e.groups.includes(Number(selectedGroup)))).sort((a,b)=>a.date.localeCompare(b.date)||a.start.localeCompare(b.start)||a.id-b.id)}
+function card(e){const online=e.room==='Д/О';const group=selectedGroup==='all'?`<span class="group-tag">${e.groups.length===2?'Обе подгруппы':'Подгруппа '+e.groups[0]}</span>`:'';return `<article class="event ${e.kind}" data-date="${e.date}" data-id="${e.id}"><div class="event-top"><span>${e.start}–${e.end}</span>${e.kind!=='class'?`<span class="type">${labels[e.kind]}</span>`:''}${group}</div><h3>${escapeHTML(e.title)}</h3><p>${escapeHTML(e.teacher)}</p><div class="event-meta"><span class="room ${online?'online':''}">${online?'Д/О · дистанционно':e.room==='с/зал'?'Спортзал':'Ауд. '+escapeHTML(e.room)}</span></div></article>`}
+function render(){const dates=Array.from({length:7},(_,i)=>addDays(currentWeek,i)),weekEvents=getWeekEvents(),end=dates[6];
+ $('week-number').textContent=`Неделя №${weekNumber(currentWeek)}`;
+ $('week-range').textContent=`${dm(currentWeek)} — ${dm(end)}${iso(monday(now))===iso(currentWeek)?' · текущая':''}`;
+ $('week-title').textContent=`${currentWeek.toLocaleDateString('ru-RU',{day:'numeric',month:'long'})} — ${end.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'})}`;
+ const special=weekEvents.filter(e=>e.kind!=='class');
+ $('count').textContent=`${weekEvents.length} ${weekEvents.length%10===1&&weekEvents.length%100!==11?'запись':weekEvents.length%10>=2&&weekEvents.length%10<=4&&!(weekEvents.length%100>=12&&weekEvents.length%100<=14)?'записи':'записей'} · ${selectedGroup==='all'?'обе подгруппы':'подгруппа '+selectedGroup}`;
+ const uniqueSpecial=[...new Map(special.map(e=>[e.date+e.start+e.kind+e.title,e])).values()];
+ $('alerts').innerHTML=uniqueSpecial.map(e=>`<div class="alert ${e.kind}"><strong>${dm(parseDate(e.date))} · ${labels[e.kind]}</strong> — ${escapeHTML(e.title)} · ${e.start}</div>`).join('');
+ $('outside').hidden=weekEvents.length>0;
+ $('head').innerHTML='<tr><th scope="col">ПАРА</th>'+dates.map((d,i)=>`<th scope="col" class="${iso(d)===todayKey?'today':''}">${SHORT_DAYS[i]}<small>${dm(d)}</small>${iso(d)===todayKey?'<span class="day-dot">Сегодня</span>':''}</th>`).join('')+'</tr>';
+ $('body').innerHTML=SLOTS.map((slot,i)=>`<tr><th scope="row">${i+1} пара<small>${slot[0]}–${slot[1]}${i===2?'<br>СБ 12:10–13:45':''}</small></th>`+dates.map((d,j)=>{const es=weekEvents.filter(e=>e.date===iso(d)&&slotIndex(e)===i);return `<td class="${j>=5?'weekend ':''}${iso(d)===todayKey?'is-today':''}">${es.length?es.map(card).join(''):'<span class="no-event" aria-label="Занятий нет">·</span>'}</td>`}).join('')+'</tr>').join('');
+ $('mobile').innerHTML=dates.map((d,i)=>{const es=weekEvents.filter(e=>e.date===iso(d));return `<section class="mobile-day ${iso(d)===todayKey?'today':''}" aria-label="${LONG_DAYS[i]} ${dm(d)}"><h3><span>${LONG_DAYS[i]}${iso(d)===todayKey?' · сегодня':''}</span><span>${dm(d)}</span></h3><div class="day-body">${es.length?es.map(card).join(''):'<p class="empty-day">Занятий нет</p>'}</div></section>`}).join('');
+ document.querySelectorAll('[data-group]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.group===selectedGroup)));
+}
+$('prev').addEventListener('click',()=>{currentWeek=addDays(currentWeek,-7);render()});
+$('next').addEventListener('click',()=>{currentWeek=addDays(currentWeek,7);render()});
+$('today').addEventListener('click',()=>{currentWeek=monday(new Date());render()});
+$('start').addEventListener('click',()=>{currentWeek=monday(parseDate(SESSION_START));render()});
+document.querySelectorAll('[data-group]').forEach(b=>b.addEventListener('click',()=>{selectedGroup=b.dataset.group;try{localStorage.setItem('ee212-subgroup',selectedGroup)}catch(e){}render()}));
+render();
+</script>
+</body>
+</html>
